@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -31,21 +32,21 @@ export default function Navbar() {
                     : 'bg-transparent border-transparent text-paper'
                     } max-w-4xl w-full mx-auto`}
             >
-                <div className="font-heading font-bold text-xl tracking-tighter uppercase relative group cursor-pointer interactive-lift">
+                <Link to="/" className="font-heading font-bold text-xl tracking-tighter uppercase relative group cursor-pointer interactive-lift">
                     <span className="relative z-10">Ofanim</span>
                     {isScrolled && <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-accent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>}
-                </div>
+                </Link>
 
                 <div className="hidden md:flex items-center gap-8 text-sm font-mono uppercase tracking-widest">
                     {['Karakteristike', 'Proizvodi', 'Kontakt'].map((item) => (
-                        <a key={item} href={`#${item.toLowerCase()}`} className="hover:text-accent transition-colors interactive-lift">
+                        <a key={item} href={`/video-security-site/#${item.toLowerCase()}`} className="hover:text-accent transition-colors interactive-lift">
                             {item}
                         </a>
                     ))}
                 </div>
 
                 <a
-                    href="#proizvodi"
+                    href="/video-security-site/#proizvodi"
                     className={`btn-magnetic px-5 py-2 text-sm font-heading font-semibold uppercase tracking-wide border ${isScrolled
                         ? 'bg-dark text-paper border-dark hover:bg-transparent hover:text-dark'
                         : 'bg-accent text-white border-accent hover:bg-transparent hover:text-paper'
